@@ -4,45 +4,48 @@ import java.util.ArrayList;
 
 public class Test {
 
-	private static Object customer;
 
 	public static void main(String[] args) {
 		
-		ArrayList<product> arr1list = new ArrayList<product>();
-		arr1list.add(new product(1, "computer"));
+////		Normal ArrayList.
+		
+//		ArrayList arr = new ArrayList();
+//		arr.add(40);
+//		arr.add("alijan");
+//		System.out.println(arr);
 		
 		
-		ArrayList<customer> arr2list = new ArrayList<customer>(20);
-		arr2list.add(new customer(10, "ahmad"));
+////		Generic ArrayList.	
 		
+//		ArrayList<String> arrg = new ArrayList<String>();
+//		
+//		arrg.add("ali");
+//		arrg.add("khan");
+//		System.out.println(arrg);
+//		
 		
+		ArrayList arrlist = new ArrayList();
+		arrlist.add(5403);
+		arrlist.add("ahmad");
+		arrlist.add(new emp(12, "Khan"));
+		arrlist.add(new Customer(1000, "Ahmadjan"));
 		
-		ArrayList stock = new ArrayList(arr1list);
-		stock.add("Faiz Ahmad Faiz");
+//		System.out.println(arrlist);
 		
-
-//		System.out.println(stock);
-		
-//		for(Object ob: arr1list){
-		
-//			if(ob instanceof product){
-//				product p = (product)ob;
-////				System.out.println((p.pId + " ; " + p.pName);
-//				System.out.println(p.pId + "  " + p.pName);
-//			}
-//		}
-		
-//		System.out.println(stock);
-		
-		for(Object o: stock){
-			if(o instanceof product){
-				product p = (product)o;
-				System.out.println(p.pId + " " + p.pName);
-			}else if(o instanceof customer){
-				customer c = (customer)o;
-				System.out.println(c.cId + " " + c.cName);
-			}else if(o instanceof String){
-				System.out.println(stock);
+//		Object o = (Object)arrlist.get(arg0)
+		for(Object o01: arrlist){
+			if(o01 instanceof emp){
+				emp e1 = (emp)o01;
+				System.out.println(e1.eid);
+				System.out.println(e1.eName);
+			}else if(o01 instanceof Customer){
+				Customer c1 = (Customer)o01;
+				System.out.println(c1.cId);
+				System.out.println(c1.cName);
+			}else if(o01 instanceof String){
+				System.out.println(arrlist);
+			}else if(o01 instanceof Integer){
+				System.out.println(o01);
 			}
 		}
 	}

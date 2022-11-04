@@ -2,10 +2,10 @@ package pack;
 
 public class emp {
 
-	int eId;
+	int eid;
 	String eName;
-	emp(int eId, String eName){
-		this.eId = eId;
+	emp(int eid, String eName){
+		this.eid = eid;
 		this.eName = eName;
 	}
 }
