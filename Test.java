@@ -1,52 +1,60 @@
 package pack;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Test {
 
-
 	public static void main(String[] args) {
 		
-////		Normal ArrayList.
+		LinkedList list = new LinkedList();
+		list.add("Faiz");
+		list.add("Ali");
+		list.add(5000);
+		list.add(6000);
 		
-//		ArrayList arr = new ArrayList();
-//		arr.add(40);
-//		arr.add("alijan");
-//		System.out.println(arr);
+		System.out.println(list);
+		
+		list.addFirst("khan");
+		System.out.println(list);
 		
 		
-////		Generic ArrayList.	
+		list.addLast("walid");
+		System.out.println(list);
 		
-//		ArrayList<String> arrg = new ArrayList<String>();
-//		
-//		arrg.add("ali");
-//		arrg.add("khan");
-//		System.out.println(arrg);
-//		
 		
-		ArrayList arrlist = new ArrayList();
-		arrlist.add(5403);
-		arrlist.add("ahmad");
-		arrlist.add(new emp(12, "Khan"));
-		arrlist.add(new Customer(1000, "Ahmadjan"));
+		list.add(3, 100000);
+		System.out.println(list);
 		
-//		System.out.println(arrlist);
+		list.add(1, 100000);
+		System.out.println(list);
 		
-//		Object o = (Object)arrlist.get(arg0)
-		for(Object o01: arrlist){
-			if(o01 instanceof emp){
-				emp e1 = (emp)o01;
-				System.out.println(e1.eid);
-				System.out.println(e1.eName);
-			}else if(o01 instanceof Customer){
-				Customer c1 = (Customer)o01;
-				System.out.println(c1.cId);
-				System.out.println(c1.cName);
-			}else if(o01 instanceof String){
-				System.out.println(arrlist);
-			}else if(o01 instanceof Integer){
-				System.out.println(o01);
-			}
+		list.remove();
+		System.out.println(list);
+		
+		list.remove(3);
+		System.out.println(list);
+		
+		list.remove(0);
+		System.out.println(list);
+		
+		list.removeFirst();
+		System.out.println(list);
+		
+		
+		list.removeLast();
+		System.out.println(list);
+		
+		
+		
+		if(list.isEmpty()){
+		System.out.println("LinkedList is imPmty");
+		}else{
+			System.out.println("LinkedList is valid data...  ");
 		}
+		
+		
+		list.clear();
+		System.out.println(list);
 	}
+
 }
