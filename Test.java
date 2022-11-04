@@ -1,60 +1,52 @@
 package pack;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
-		LinkedList list = new LinkedList();
-		list.add("Faiz");
-		list.add("Ali");
-		list.add(5000);
-		list.add(6000);
+		ArrayList list = new ArrayList();
+		list.add("FaizAhamd");
+		list.add("Ahmad");
+		list.add(5960);
 		
-		System.out.println(list);
+//		Normal ListIterator.
 		
-		list.addFirst("khan");
-		System.out.println(list);
+		ListIterator data = list.listIterator();
+		while(data.hasNext()){
+			Object obj = (Object)data.next();
+			System.out.println(obj);
+			
+		}
+		System.out.println(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
+		while(data.hasPrevious()){
+			Object ob = (Object)data.previous();
+			System.out.println(ob);
+			
+		}
 		
+//		Genric ListIterator.
 		
-		list.addLast("walid");
-		System.out.println(list);
+		ArrayList<student> listdata = new ArrayList<student>();
+		listdata.add(new student(1, "Faiz Ahmad Faiz"));
+		listdata.add(new student(2, "walid"));
 		
+		ListIterator<student> listIter = listdata.listIterator();
+		while(listIter.hasNext()){
+			student s = listIter.next();
+			System.out.println(s.sid + " : " + s.sName);
+		}
 		
-		list.add(3, 100000);
-		System.out.println(list);
+		System.out.println(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
 		
-		list.add(1, 100000);
-		System.out.println(list);
-		
-		list.remove();
-		System.out.println(list);
-		
-		list.remove(3);
-		System.out.println(list);
-		
-		list.remove(0);
-		System.out.println(list);
-		
-		list.removeFirst();
-		System.out.println(list);
-		
-		
-		list.removeLast();
-		System.out.println(list);
-		
-		
-		
-		if(list.isEmpty()){
-		System.out.println("LinkedList is imPmty");
-		}else{
-			System.out.println("LinkedList is valid data...  ");
+		while(listIter.hasPrevious()){
+			student st = listIter.previous();
+			System.out.println(st.sid + " , " + st.sName);
 		}
 		
 		
-		list.clear();
-		System.out.println(list);
 	}
 
 }
